@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+        <div class="container">
+                <div class="control">
+                        <div class="input">
+                                <input id="input" type="password">
+                                <i id="toggle" class="fas fa-eye-slash hidden"></i>
+                        </div>
+                        <div class="rule-heading">Your password should has:</div>
+                        <div class="rule">
+                                <input type="checkbox" id="condition_8char">
+                                <label>More than 8 charactes</label>
+                        </div>
+                        <div class="rule">
+                                <input type="checkbox" id="condition_uppercase">
+                                <label>At least 1 uppercase character</label>
+                        </div>
+                        <div class="rule">
+                                <input type="checkbox" id="condition_numberic">
+                                <label>At least 1 numberic character</label>
+                        </div>
+                        <div class="rule">
+                                <input type="checkbox" id="condition_special_char">
+                                <label>At least 1 special character (! @ # $ % ^ & *)</label>
+                        </div>
+                        <div class="rule" v>
+                                <input type="checkbox" id="condition_no_ambiguous">
+                                <label>No ambiguous characters ({ } [ ] ( ) / \ ' " ` ~ , ; : . <>)</label>
+                        </div>
+                </div>
+
+                <script src="index.js"></script>
+</body>
+
+</html>

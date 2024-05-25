@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+:root {
+    --background: #f7d794;
+    --face: #f8dd7b;
+    --eye: #272b38;
+    --border: #eceef1;
+    --border-focus: #0093fb;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--background);
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background-color: white;
+    padding: 2rem;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.container .title {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.container .desc {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 0.5rem;
+}
+
+.container .face {
+    width: 100px;
+    height: 100px;
+    background-color: var(--face);
+    border-radius: 100%;
+    position: relative;
+    align-self: start;
+}
+
+.container .face>* {
+    transition: 0.3s all ease-in-out;
+}
+
+.container .face .eye {
+    position: absolute;
+    top: 25%;
+    width: 10px;
+    height: 20px;
+    background-color: var(--eye);
+    border-radius: 100%;
+    animation: blinking 1s infinite alternate;
+}
+
+.container .face .eye--left {
+    left: 25%;
+}
+
+.container .face .eye--right {
+    right: 25%;
+}
+
+.container .face .mouth {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100%;
+}
+
+.container .face--nothing .mouth {
+    width: 0;
+    height: 0;
+}
+
+.container .face--saddest .eye {
+    width: 20px;
+    top: 20%;
+    background-color: transparent;
+    border-bottom: 5px solid var(--eye);
+    animation: none;
+}
+
+.container .face--saddest .mouth {
+    border-top: 5px solid var(--eye);
+}
+
+.container .face--sad .eye {
+    top: 25%;
+    width: 10px;
+    height: 20px;
+}
+
+.container .face--sad .mouth {
+    border-top: 5px solid var(--eye);
+}
+
+.container .face--neutral .eye {
+    top: 25%;
+    width: 10px;
+    height: 20px;
+    animation: blinking 1s infinite alternate;
+}
+
+.container .face--neutral .mouth {
+    width: 20px;
+    bottom: 20%;
+    border-radius: 0;
+    border-bottom: 5px solid var(--eye);
+}
+
+.container .face--smile .mouth {
+    bottom: 20%;
+    border-bottom: 5px solid var(--eye);
+}
+
+.container .face--happy .mouth {
+    bottom: 15%;
+    border-bottom: 5px solid var(--eye);
+    background-color: var(--eye);
+    border-radius: 0 0 150px 150px;
+}
+
+.container .face--happiest .eye {
+    top: 30%;
+    width: 20px;
+    background-color: transparent;
+    border-top: 5px solid var(--eye);
+    animation: none;
+}
+
+.container .face--happiest .eye--left {
+    left: 20%;
+}
+
+.container .face--happiest .eye--right {
+    right: 20%;
+}
+
+.container .face--happiest .mouth {
+    bottom: 15%;
+    border-bottom: 5px solid var(--eye);
+    background-color: var(--eye);
+    border-radius: 0 0 150px 150px;
+}
+
+.container .control {
+    display: grid;
+    place-items: center;
+}
+
+.container .control .input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.container .control .input input {
+    min-width: 250px;
+    height: 25px;
+    padding-left: 5px;
+    padding-right: 35px;
+    outline: none;
+    border: 2px solid #d9e0e4;
+    border-radius: 8px;
+    transition: 0.3s all ease-in-out;
+}
+
+.container .control .input input:active,
+.container .control .input input:hover {
+    border-color: var(--border-focus);
+}
+
+.container .control .input i {
+    position: absolute;
+    right: 10px;
+    opacity: 0.4;
+    transition: 0.3s all ease-in-out;
+}
+
+.container .control .input i:hover {
+    color: var(--border-focus);
+}
+
+.container .control .rule-heading,
+.container .control .rule {
+    font-size: 14px;
+    justify-self: flex-start;
+}
+
+.container .control .rule-heading {
+    font-weight: 600;
+    justify-self: flex-start;
+}
+
+.container .control .rule {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    cursor: not-allowed;
+}
+
+.container .control .rule input {
+    pointer-events: none;
+}
+
+@keyframes blinking {
+    0% {
+        height: 5px;
+        top: calc(25% + 7.5px);
+    }
+
+    20%,
+    100% {
+        height: 20px;
+        top: 25%;
+    }
+}
